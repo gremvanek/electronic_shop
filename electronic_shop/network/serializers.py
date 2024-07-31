@@ -7,4 +7,3 @@ class NetworkElementSerializer(serializers.ModelSerializer):
         model = NetworkElement
         fields = "__all__"
         read_only_fields = ("debt",)
-
