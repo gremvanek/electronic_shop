@@ -2,8 +2,9 @@ from django.core.management import BaseCommand
 from django.conf import settings
 from users.models import CustomUser
 
+
 class Command(BaseCommand):
-    help = 'Создает суперпользователя с указанным email и паролем'
+    help = "Создает суперпользователя с указанным email и паролем"
 
     def handle(self, *args, **options):
         email = settings.ROOT_EMAIL
@@ -16,6 +17,6 @@ class Command(BaseCommand):
                 first_name="Admin",
                 last_name="SkyPro",
             )
-            self.stdout.write(self.style.SUCCESS(f'Superuser {email} создан.'))
+            self.stdout.write(self.style.SUCCESS(f"Superuser {email} создан."))
         else:
-            self.stdout.write(self.style.WARNING(f'Superuser {email} уже существует.'))
+            self.stdout.write(self.style.WARNING(f"Superuser {email} уже существует."))
