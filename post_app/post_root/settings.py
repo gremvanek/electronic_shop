@@ -25,10 +25,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # Мной добавление apps
     "rest_framework",
-    "network",
-    "users",
+    "post",  
+    "users", 
 ]
 
 MIDDLEWARE = [
@@ -41,7 +40,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "electronic_shop.urls"
+ROOT_URLCONF = "post_root.urls"
 
 TEMPLATES = [
     {
@@ -59,7 +58,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "electronic_shop.wsgi.application"
+WSGI_APPLICATION = "post_root.wsgi.application"
 
 
 # Database
