@@ -2,6 +2,9 @@ from rest_framework import viewsets
 from .models import CustomUser
 from .serializers import CustomUserSerializer
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
 
 
 class CustomUserViewSet(viewsets.ModelViewSet):
@@ -18,3 +21,11 @@ class CustomUserViewSet(viewsets.ModelViewSet):
         else:
             self.permission_classes = []
         return super().get_permissions()
+
+
+class LogoutView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        request.user.auth_token.delete()
+        return Response(status=status.HTTP_200_OK)
