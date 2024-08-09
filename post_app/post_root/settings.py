@@ -125,8 +125,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Настройки для пользователей
 AUTH_USER_MODEL = "users.CustomUser"
-LOGOUT_REDIRECT_URL = "/"
-LOGIN_REDIRECT_URL = "/"
 LOGIN_URL = "users:login"
 # Настройки для супер пользователя
 ROOT_EMAIL = os.getenv("ROOT_EMAIL")
