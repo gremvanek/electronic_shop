@@ -3,6 +3,8 @@ from .models import Post, Comment
 
 
 class PostSerializer(serializers.ModelSerializer):
+    author = serializers.ReadOnlyField(source='author.name')
+
     class Meta:
         model = Post
         fields = [
@@ -17,6 +19,8 @@ class PostSerializer(serializers.ModelSerializer):
 
 
 class CommentSerializer(serializers.ModelSerializer):
+    author = serializers.ReadOnlyField(source='author.name')
+
     class Meta:
         model = Comment
         fields = ["id", "author", "text", "post", "date_created", "date_modified"]
